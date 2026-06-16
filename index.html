@@ -97,15 +97,23 @@
     .social-link svg { width: 15px; height: 15px; flex-shrink: 0; }
 
     /* PHOTO */
-    .photo-ring {
-      width: 260px; height: 260px; border-radius: 50%; padding: 3px;
-      background: var(--grad); position: relative; opacity: 0;
-      box-shadow: 0 0 60px rgba(99,102,241,0.3), 0 0 120px rgba(99,102,241,0.15);
+    .photo-outer {
+      position: relative; width: 340px; height: 340px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
     }
-    .photo-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: top; display: block; background: #111; }
+    .photo-ring {
+      width: 270px; height: 270px; border-radius: 50%; padding: 3px;
+      background: var(--grad); position: relative; opacity: 0; flex-shrink: 0;
+      box-shadow: 0 0 70px rgba(6,182,212,0.35), 0 0 140px rgba(6,182,212,0.15);
+    }
+    .photo-ring img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      object-position: center 12%; display: block; background: #111;
+      transform: scale(1.28); transform-origin: center 18%;
+    }
     .photo-ring::after {
-      content: ''; position: absolute; inset: -12px; border-radius: 50%;
-      border: 1px solid rgba(99,102,241,0.2); animation: spin 12s linear infinite;
+      content: ''; position: absolute; inset: -14px; border-radius: 50%;
+      border: 1px solid rgba(6,182,212,0.2); animation: spin 12s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     .photo-dot {
@@ -113,6 +121,38 @@
       border: 2px solid var(--bg); bottom: 14px; right: 14px;
       box-shadow: 0 0 12px var(--emerald);
     }
+
+    /* FLOATING BADGES */
+    .fbadge {
+      position: absolute; font-size: 11px; font-weight: 600; white-space: nowrap;
+      padding: 6px 13px; border-radius: 20px;
+      background: rgba(5,10,20,0.85); backdrop-filter: blur(12px);
+      border: 1px solid rgba(6,182,212,0.3); color: #22d3ee;
+      box-shadow: 0 0 20px rgba(6,182,212,0.12);
+      animation: fbob 3.4s ease-in-out infinite;
+    }
+    @keyframes fbob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .fb1 { top: 2px;    left: 88px;  animation-delay: 0s; }
+    .fb2 { top: 48px;   right: 4px;  animation-delay: 0.6s; }
+    .fb3 { bottom: 48px; right: 0px;  animation-delay: 1.1s; }
+    .fb4 { bottom: 2px; left: 105px; animation-delay: 1.6s; }
+    .fb5 { bottom: 48px; left: 0px;   animation-delay: 0.9s; }
+    .fb6 { top: 48px;   left: 4px;   animation-delay: 0.3s; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); font-weight: 600; }
+    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .about-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px 18px; transition: all 0.2s;
+    }
+    .about-card:hover { border-color: var(--border-h); background: var(--surface-2); }
+    .about-card-icon { font-size: 22px; margin-bottom: 8px; }
+    .about-card-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .about-card-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
     /* STATS BAR */
     .stats-bar {
@@ -228,10 +268,14 @@
     @media (max-width: 750px) {
       nav { padding: 0 1.2rem; }
       .nav-links a:not(.nav-resume) { display: none; }
-      .hero { flex-direction: column-reverse; align-items: center; text-align: center; padding: 100px 1.5rem 60px; gap: 36px; }
+      .hero { flex-direction: column-reverse; align-items: center; text-align: center; padding: 100px 1.5rem 60px; gap: 28px; }
       .hero-btns { justify-content: center; }
       .hero-socials { justify-content: center; }
+      .photo-outer { width: 220px; height: 220px; }
       .photo-ring { width: 180px; height: 180px; }
+      .fbadge { font-size: 10px; padding: 5px 10px; }
+      .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-cards { grid-template-columns: 1fr 1fr; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
       .sbar-item:nth-child(2) { border-right: none; }
       .sbar-item:nth-child(3) { border-top: 1px solid var(--border); }
@@ -257,6 +301,7 @@
 <nav id="nav">
   <div class="nav-logo">Anurag Rawat</div>
   <div class="nav-links">
+    <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -301,7 +346,13 @@
         </a>
       </div>
     </div>
-    <div class="hero-photo-wrap">
+    <div class="photo-outer">
+      <span class="fbadge fb1">🐍 Python</span>
+      <span class="fbadge fb2">🔥 PyTorch</span>
+      <span class="fbadge fb3">🤗 HuggingFace</span>
+      <span class="fbadge fb4">📊 SQL</span>
+      <span class="fbadge fb5">🧠 NLP</span>
+      <span class="fbadge fb6">🎓 Monash</span>
       <div class="photo-ring">
         <img src="photo.jpg" alt="Anurag Rawat" />
         <div class="photo-dot"></div>
@@ -319,6 +370,56 @@
     </div>
   </div>
 </div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="gsap-hidden">
+    <div class="section-tag">About</div>
+    <h2>A bit about me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text gsap-hidden">
+      <p>
+        I'm a <strong>Data Scientist</strong> based in Delhi, India, with a Master's in Data Science from
+        <strong>Monash University, Melbourne</strong>. My work sits at the intersection of machine learning,
+        analytics, and real-world impact — I care about building things that actually work in production,
+        not just notebooks.
+      </p>
+      <p>
+        I've worked across <strong>fintech (Paytm)</strong>, <strong>financial analytics (IM Stocks, Geop Systems)</strong>,
+        and <strong>business intelligence</strong>, giving me a full-stack view of how data flows from raw
+        collection all the way to executive dashboards.
+      </p>
+      <p>
+        Outside of work I'm passionate about <strong>NLP and transformer models</strong> — my FitReview
+        project fine-tunes RoBERTa on real fitness app reviews and hits <strong>93.8% accuracy</strong>.
+        I'm currently looking for roles in ML engineering, data science, or analytics globally.
+      </p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card gsap-hidden">
+        <div class="about-card-icon">🌏</div>
+        <div class="about-card-title">Based in Delhi</div>
+        <div class="about-card-desc">Open to remote & relocation globally</div>
+      </div>
+      <div class="about-card gsap-hidden">
+        <div class="about-card-icon">🎓</div>
+        <div class="about-card-title">MSc Data Science</div>
+        <div class="about-card-desc">Monash University, Melbourne</div>
+      </div>
+      <div class="about-card gsap-hidden">
+        <div class="about-card-icon">🤖</div>
+        <div class="about-card-title">ML Focus</div>
+        <div class="about-card-desc">NLP, transformers, fine-tuning</div>
+      </div>
+      <div class="about-card gsap-hidden">
+        <div class="about-card-icon">📈</div>
+        <div class="about-card-title">5+ Years</div>
+        <div class="about-card-desc">Across data, analytics & BI roles</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
