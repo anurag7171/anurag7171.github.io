@@ -11,20 +11,20 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #05070f;
+      --bg: #050a12;
       --surface: rgba(255,255,255,0.03);
       --surface-2: rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.07);
       --border-h: rgba(255,255,255,0.15);
-      --text: #eaeff8;
-      --muted: #7a8499;
-      --muted-2: #9aa3b5;
-      --indigo: #6366f1;
-      --violet: #8b5cf6;
+      --text: #e0f4ff;
+      --muted: #6b8299;
+      --muted-2: #8ba5bb;
+      --indigo: #06b6d4;
+      --violet: #3b82f6;
       --emerald: #10b981;
       --amber: #f59e0b;
-      --grad: linear-gradient(135deg, #6366f1, #8b5cf6);
-      --grad-text: linear-gradient(90deg, #818cf8, #a78bfa, #c084fc);
+      --grad: linear-gradient(135deg, #06b6d4, #3b82f6);
+      --grad-text: linear-gradient(90deg, #22d3ee, #60a5fa, #818cf8);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
@@ -36,9 +36,9 @@
     /* ORBS */
     .orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     .orb { position: absolute; border-radius: 50%; filter: blur(100px); }
-    .o1 { width: 650px; height: 650px; background: radial-gradient(circle, rgba(99,102,241,0.18), transparent 70%); top: -180px; right: -80px; animation: drift 16s ease-in-out infinite; }
-    .o2 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(139,92,246,0.14), transparent 70%); bottom: 5%; left: -130px; animation: drift 14s ease-in-out infinite reverse; }
-    .o3 { width: 380px; height: 380px; background: radial-gradient(circle, rgba(16,185,129,0.09), transparent 70%); top: 45%; right: 8%; animation: drift 18s ease-in-out infinite; }
+    .o1 { width: 650px; height: 650px; background: radial-gradient(circle, rgba(6,182,212,0.18), transparent 70%); top: -180px; right: -80px; animation: drift 16s ease-in-out infinite; }
+    .o2 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(59,130,246,0.14), transparent 70%); bottom: 5%; left: -130px; animation: drift 14s ease-in-out infinite reverse; }
+    .o3 { width: 380px; height: 380px; background: radial-gradient(circle, rgba(6,182,212,0.09), transparent 70%); top: 45%; right: 8%; animation: drift 18s ease-in-out infinite; }
     @keyframes drift { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-25px,30px)} 66%{transform:translate(30px,-18px)} }
 
     /* NAV */
@@ -427,32 +427,6 @@
         <div class="proj-links">
           <a class="proj-link pl-primary" href="https://huggingface.co/spaces/Anurag717/fitreview-demo" target="_blank">Live Demo →</a>
           <a class="proj-link pl-ghost" href="https://github.com/fittech-ai-suite/fitreview-nlp-pipeline" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-    <div class="proj-card gsap-hidden">
-      <div class="proj-img-placeholder">🐦</div>
-      <div class="proj-body">
-        <div class="proj-top">
-          <div class="proj-title">Twitter Sentiment Analysis</div>
-          <span class="proj-tag tag-r">R · NLP</span>
-        </div>
-        <p class="proj-desc">Sentiment classification pipeline in R using multiple financial dictionaries (Harvard, Henry's, Loughran-McDonald, QDAP). Processed raw tweet data with stop-word removal and stemming via VCorpus. Visualized distributions and segregated positive/negative tweets using Sentimentr.</p>
-        <div class="proj-chips">
-          <span class="chip">R</span><span class="chip">ggplot2</span><span class="chip">syuzhet</span><span class="chip">VCorpus</span><span class="chip">Sentimentr</span>
-        </div>
-      </div>
-    </div>
-    <div class="proj-card gsap-hidden">
-      <div class="proj-img-placeholder">🚗</div>
-      <div class="proj-body">
-        <div class="proj-top">
-          <div class="proj-title">Car Accident Analysis — South Australia</div>
-          <span class="proj-tag tag-r">R · Tableau</span>
-        </div>
-        <p class="proj-desc">Wrangled a 13,000-row dataset to identify causes of road accidents in South Australia. Built interactive Tableau dashboards and a custom Shiny app with user-controlled parameter comparison, colour options, and summary functions.</p>
-        <div class="proj-chips">
-          <span class="chip">R</span><span class="chip">Shiny</span><span class="chip">ggplot2</span><span class="chip">dplyr</span><span class="chip">Tableau</span>
         </div>
       </div>
     </div>
