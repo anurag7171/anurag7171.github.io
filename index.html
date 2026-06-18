@@ -143,7 +143,7 @@
     .fb6 { top: 95px;    left: 28px;  animation-delay: 0.3s; }   /* upper left     */
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .about-text p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { color: var(--text); font-weight: 600; }
@@ -156,6 +156,12 @@
     .about-card-icon { font-size: 22px; margin-bottom: 8px; }
     .about-card-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
     .about-card-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .about-skills-wrap { margin-top: 52px; }
+    .about-skills-title { font-size: 13px; font-weight: 600; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+
+    /* EXP DIVIDER */
+    .tl-divider { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); padding: 6px 0 18px 0; display: flex; align-items: center; gap: 12px; }
+    .tl-divider::after { content:''; flex:1; height:1px; background: var(--border); }
 
     /* STATS BAR */
     .stats-bar {
@@ -285,6 +291,7 @@
       .fb6 { top: 60px;    left: 12px; }
       .about-grid { grid-template-columns: 1fr; gap: 28px; }
       .about-cards { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
       .sbar-item:nth-child(2) { border-right: none; }
       .sbar-item:nth-child(3) { border-top: 1px solid var(--border); }
@@ -313,7 +320,6 @@
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
     <a href="resume.pdf" download class="nav-resume">Resume ↓</a>
   </div>
@@ -329,7 +335,7 @@
       <p class="hero-bio">
         Data Scientist with an MSc from Monash University. I build end-to-end ML pipelines,
         fine-tune language models, and turn messy data into decisions that matter.
-        Currently in Delhi — targeting ML and analytics roles globally.
+        Currently based in Melbourne, working remotely — targeting ML and analytics roles globally.
       </p>
       <div class="hero-btns">
         <a class="btn btn-grad" href="#projects">View my work</a>
@@ -407,9 +413,9 @@
     </div>
     <div class="about-cards">
       <div class="about-card gsap-hidden">
-        <div class="about-card-icon">🌏</div>
-        <div class="about-card-title">Based in Delhi</div>
-        <div class="about-card-desc">Open to remote & relocation globally</div>
+        <div class="about-card-icon">🇦🇺</div>
+        <div class="about-card-title">Based in Melbourne</div>
+        <div class="about-card-desc">Working remotely from Delhi, India</div>
       </div>
       <div class="about-card gsap-hidden">
         <div class="about-card-icon">🎓</div>
@@ -428,6 +434,35 @@
       </div>
     </div>
   </div>
+  <div class="about-skills-wrap gsap-hidden">
+    <div class="about-skills-title">Skills & Tools</div>
+    <div class="skills-grid">
+      <div class="skill-group gsap-hidden">
+        <div class="skill-group-title">🧠 ML & AI</div>
+        <div class="skill-chips">
+          <span class="skill-chip hot">PyTorch</span><span class="skill-chip hot">HuggingFace</span><span class="skill-chip hot">RoBERTa / BERT</span><span class="skill-chip">scikit-learn</span><span class="skill-chip">MLflow</span><span class="skill-chip">NLP</span>
+        </div>
+      </div>
+      <div class="skill-group gsap-hidden">
+        <div class="skill-group-title">💻 Languages</div>
+        <div class="skill-chips">
+          <span class="skill-chip hot">Python</span><span class="skill-chip hot">R</span><span class="skill-chip hot">SQL</span><span class="skill-chip">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="skill-group gsap-hidden">
+        <div class="skill-group-title">📊 Data & Analytics</div>
+        <div class="skill-chips">
+          <span class="skill-chip hot">Pandas</span><span class="skill-chip hot">Tableau</span><span class="skill-chip">NumPy</span><span class="skill-chip">ggplot2</span><span class="skill-chip">Shiny</span><span class="skill-chip">Cohort Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group gsap-hidden">
+        <div class="skill-group-title">⚙️ Engineering</div>
+        <div class="skill-chips">
+          <span class="skill-chip hot">FastAPI</span><span class="skill-chip hot">Git / GitHub</span><span class="skill-chip">REST APIs</span><span class="skill-chip">Agile</span><span class="skill-chip">Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -435,13 +470,15 @@
   <div class="gsap-hidden">
     <div class="section-tag">Experience</div>
     <h2>Where I've worked</h2>
-    <p class="section-sub">Across fintech, analytics, business intelligence, and ML.</p>
+    <p class="section-sub">Work experience and internships across fintech, analytics, BI, and ML.</p>
   </div>
   <div class="timeline">
+    <div class="tl-divider gsap-hidden">Work Experience</div>
+
     <div class="tl-item gsap-hidden">
       <div class="tl-card tl-current">
         <div class="tl-top">
-          <div><div class="tl-company">Supreme Sales Agency <span class="badge-current">Current</span></div><div class="tl-loc">📍 Delhi, India</div></div>
+          <div><div class="tl-company">Supreme Sales Agency <span class="badge-current">Current</span></div><div class="tl-loc">📍 Delhi, India &nbsp;·&nbsp; Remote</div></div>
           <div class="tl-date">2025 — Present</div>
         </div>
         <div class="tl-role">BI Analyst</div>
@@ -466,6 +503,9 @@
         </ul>
       </div>
     </div>
+
+    <div class="tl-divider gsap-hidden" style="padding-top:12px;">Internships</div>
+
     <div class="tl-item gsap-hidden">
       <div class="tl-card">
         <div class="tl-top">
@@ -538,41 +578,6 @@
           <a class="proj-link pl-primary" href="https://huggingface.co/spaces/Anurag717/fitreview-demo" target="_blank">Live Demo →</a>
           <a class="proj-link pl-ghost" href="https://github.com/fittech-ai-suite/fitreview-nlp-pipeline" target="_blank">GitHub</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="section" id="skills">
-  <div class="gsap-hidden">
-    <div class="section-tag">Skills</div>
-    <h2>Tools of the trade</h2>
-    <p class="section-sub">Built across 5+ years of internships, research, and production work.</p>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-group gsap-hidden">
-      <div class="skill-group-title">🧠 ML & AI</div>
-      <div class="skill-chips">
-        <span class="skill-chip hot">PyTorch</span><span class="skill-chip hot">HuggingFace</span><span class="skill-chip hot">RoBERTa / BERT</span><span class="skill-chip">scikit-learn</span><span class="skill-chip">MLflow</span><span class="skill-chip">NLP</span>
-      </div>
-    </div>
-    <div class="skill-group gsap-hidden">
-      <div class="skill-group-title">💻 Languages</div>
-      <div class="skill-chips">
-        <span class="skill-chip hot">Python</span><span class="skill-chip hot">R</span><span class="skill-chip hot">SQL</span><span class="skill-chip">HTML / CSS</span>
-      </div>
-    </div>
-    <div class="skill-group gsap-hidden">
-      <div class="skill-group-title">📊 Data & Analytics</div>
-      <div class="skill-chips">
-        <span class="skill-chip hot">Pandas</span><span class="skill-chip hot">Tableau</span><span class="skill-chip">NumPy</span><span class="skill-chip">ggplot2</span><span class="skill-chip">Shiny</span><span class="skill-chip">Cohort Analysis</span>
-      </div>
-    </div>
-    <div class="skill-group gsap-hidden">
-      <div class="skill-group-title">⚙️ Engineering</div>
-      <div class="skill-chips">
-        <span class="skill-chip hot">FastAPI</span><span class="skill-chip hot">Git / GitHub</span><span class="skill-chip">REST APIs</span><span class="skill-chip">Agile</span><span class="skill-chip">Linux</span>
       </div>
     </div>
   </div>
