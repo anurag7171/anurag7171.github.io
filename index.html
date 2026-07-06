@@ -191,6 +191,18 @@
     /* SECTION */
     .section { max-width: 900px; margin: 0 auto; padding: 0 2rem 100px; position: relative; z-index: 1; }
     .band-grey { position: relative; z-index: 1; background: #0b1322; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding-top: 56px; margin-bottom: 42px; }
+    #experience { max-width: 1040px; }
+    .exp-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 10px; }
+    .exp-col-head { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 22px; }
+    .tl-line { position: relative; padding-left: 26px; }
+    .tl-line-fill { position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; border-radius: 2px; background: linear-gradient(to bottom, var(--acc), rgba(255,255,255,0.06)); transform: scaleY(0); transform-origin: top; }
+    .tl-node { position: relative; padding-bottom: 26px; }
+    .tl-node:last-child { padding-bottom: 2px; }
+    .tl-node::before { content:''; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 4px var(--bg), 0 0 10px var(--acc); }
+    .tl-node-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; line-height: 1.3; }
+    .tl-node-sub { font-size: 12.5px; font-weight: 600; color: var(--acc); margin-bottom: 4px; }
+    .tl-node-date { font-size: 11.5px; color: var(--muted); margin-bottom: 7px; }
+    .tl-node-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
     .section-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--indigo); padding: 4px 10px; background: rgba(99,102,241,0.1); border-radius: 4px; margin-bottom: 12px; }
     h2 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
     .section-sub { color: var(--muted); margin-bottom: 44px; }
@@ -303,6 +315,8 @@
       .about-grid { grid-template-columns: 1fr; gap: 28px; }
       .about-2col { grid-template-columns: 1fr; gap: 32px; max-width: 560px; }
       .timeline { grid-template-columns: 1fr; }
+      .exp-cols { grid-template-columns: 1fr; gap: 10px; }
+      .exp-col { margin-bottom: 16px; }
       .about-cards { grid-template-columns: 1fr 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
@@ -436,125 +450,71 @@
     <h2>Where I've worked</h2>
     <p class="section-sub">Work experience and internships across fintech, analytics, BI, and ML.</p>
   </div>
-  <div class="timeline">
-    <div class="tl-divider gsap-hidden">Work Experience</div>
-
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card tl-current">
-        <div class="tl-top">
-          <div><div class="tl-company">Supreme Sales Agency <span class="badge-current">Current</span></div><div class="tl-loc">Remote &nbsp;·&nbsp; Melbourne, VIC</div></div>
-          <div class="tl-date">2025 — Present</div>
-        </div>
-        <div class="tl-role">BI Analyst</div>
-        <ul class="tl-bullets">
-          <li>Designing and maintaining BI dashboards to drive sales and operations decisions.</li>
-          <li>Building data pipelines to consolidate reporting across multiple business units.</li>
-          <li>Delivering actionable insights on sales performance, inventory, and customer trends.</li>
-        </ul>
+    <div class="exp-cols">
+    <div class="exp-col gsap-hidden">
+      <h3 class="exp-col-head">Work Experience</h3>
+      <div class="tl-line" style="--acc:#6366f1">
+        <span class="tl-line-fill"></span>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">Supreme Sales Agency <span class="badge-current">Current</span></div>
+        <div class="tl-node-sub">BI Analyst · Remote, Melbourne</div>
+        <div class="tl-node-date">2025 — Present</div>
+        <div class="tl-node-desc">Design and maintain BI dashboards and data pipelines, delivering insights on sales, inventory and customer trends.</div>
+      </div>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">KSNR Services</div>
+        <div class="tl-node-sub">Project Assistant · Noida, India</div>
+        <div class="tl-node-date">Mar – Jun 2022</div>
+        <div class="tl-node-desc">Coordinated Agile delivery of a blockchain token and wallet build, ran UAT testing, and helped recruit 7+ engineers.</div>
+      </div>
       </div>
     </div>
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card">
-        <div class="tl-top">
-          <div><div class="tl-company">KSNR Services</div><div class="tl-loc">Noida, India</div></div>
-          <div class="tl-date">Mar – Jun 2022</div>
-        </div>
-        <div class="tl-role">Project Assistant</div>
-        <ul class="tl-bullets">
-          <li>Contributed to white paper development for an upcoming blockchain token and wallet release.</li>
-          <li>Collaborated with the IT team using Agile methodology; conducted functionality and usability testing.</li>
-          <li>Assisted HR in recruiting talent for local and international branches.</li>
-        </ul>
+    <div class="exp-col gsap-hidden">
+      <h3 class="exp-col-head">Part-time & Casual</h3>
+      <div class="tl-line" style="--acc:#22d3ee">
+        <span class="tl-line-fill"></span>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">7-Eleven <span class="badge-current">Current</span></div>
+        <div class="tl-node-sub">Customer Experience Rep · Richmond, VIC</div>
+        <div class="tl-node-date">2026 — Present</div>
+        <div class="tl-node-desc">Handle inbound calls, emails and enquiries across a 7-day operation, resolving customer issues and supporting franchise stores.</div>
+      </div>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">Woolworths Group</div>
+        <div class="tl-node-sub">Personal Shopper · Melbourne, VIC</div>
+        <div class="tl-node-date">Dec 2022 — Present</div>
+        <div class="tl-node-desc">Resolved order enquiries and substitutions in a high-volume environment, consistently meeting accuracy and quality targets.</div>
+      </div>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">IGA X-press</div>
+        <div class="tl-node-sub">Cashier / CSR · Melbourne, VIC</div>
+        <div class="tl-node-date">May – Oct 2022</div>
+        <div class="tl-node-desc">Processed high transaction volumes with zero discrepancy and resolved complaints through calm conflict resolution.</div>
+      </div>
       </div>
     </div>
-
-    <div class="tl-divider gsap-hidden" style="padding-top:12px;">Part-time & Casual</div>
-
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card tl-current">
-        <div class="tl-top">
-          <div><div class="tl-company">7-Eleven <span class="badge-current">Current</span></div><div class="tl-loc">Richmond, VIC — Customer Experience Centre (CXC)</div></div>
-          <div class="tl-date">2026 — Present</div>
-        </div>
-        <div class="tl-role">Customer Experience Representative · Casual (10–20 hrs/week)</div>
-        <ul class="tl-bullets">
-          <li>Handling inbound calls, emails and online enquiries from customers and Starbucks consumers across an 8am–6pm, 7-day operation.</li>
-          <li>Supporting franchise store managers and staff with operational queries as part of a 24/7 team.</li>
-          <li>Resolving complaints and concerns professionally, maintaining accurate records of all customer interactions.</li>
-          <li>Representing the 7-Eleven brand with professionalism at all times.</li>
-        </ul>
+    <div class="exp-col gsap-hidden">
+      <h3 class="exp-col-head">Internships</h3>
+      <div class="tl-line" style="--acc:#a78bfa">
+        <span class="tl-line-fill"></span>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">IM Stocks</div>
+        <div class="tl-node-sub">Business Analyst Intern · Gurugram, India</div>
+        <div class="tl-node-date">Mar – Jun 2022</div>
+        <div class="tl-node-desc">Managed the Corporate Dilation project for 170+ clients and analysed data from 300 companies using R and regression.</div>
       </div>
-    </div>
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card">
-        <div class="tl-top">
-          <div><div class="tl-company">Woolworths Group Limited</div><div class="tl-loc">Melbourne, VIC</div></div>
-          <div class="tl-date">Dec 2022 — Present</div>
-        </div>
-        <div class="tl-role">Personal Shopper / Customer Fulfilment Team Member · Casual</div>
-        <ul class="tl-bullets">
-          <li>Resolved inbound order enquiries, handled product substitutions, and ensured customer satisfaction on every interaction.</li>
-          <li>Applied active listening and empathetic communication to achieve first contact resolution on complaints.</li>
-          <li>Managed high-volume workloads in a fast-paced environment, consistently meeting accuracy and quality targets.</li>
-          <li>Collaborated cross-functionally with dispatch and restocking teams.</li>
-        </ul>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">Paytm</div>
+        <div class="tl-node-sub">Risk Analyst Intern · Noida, India</div>
+        <div class="tl-node-date">Jan – Mar 2021</div>
+        <div class="tl-node-desc">Worked on offline-payment risk and fraud prevention, and maintained a stolen/missing-card warning database.</div>
       </div>
-    </div>
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card">
-        <div class="tl-top">
-          <div><div class="tl-company">IGA X-press</div><div class="tl-loc">Melbourne, VIC</div></div>
-          <div class="tl-date">May – Oct 2022</div>
-        </div>
-        <div class="tl-role">Cashier / Customer Service Representative</div>
-        <ul class="tl-bullets">
-          <li>Processed high volumes of cash, EFTPOS, and credit card transactions with zero discrepancy across all shifts.</li>
-          <li>Resolved customer complaints calmly through effective conflict resolution, enrolling customers in loyalty programs.</li>
-        </ul>
+      <div class="tl-node gsap-hidden">
+        <div class="tl-node-title">Geop Systems</div>
+        <div class="tl-node-sub">Data Analytics Intern · Gurugram, India</div>
+        <div class="tl-node-date">2020 – 2021</div>
+        <div class="tl-node-desc">Analysed data from 250 clients using cohort analysis and regression, and led profitability analysis of 200+ companies in Pandas.</div>
       </div>
-    </div>
-
-    <div class="tl-divider gsap-hidden" style="padding-top:12px;">Internships</div>
-
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card">
-        <div class="tl-top">
-          <div><div class="tl-company">IM Stocks</div><div class="tl-loc">Gurugram, India</div></div>
-          <div class="tl-date">Mar – Jun 2022</div>
-        </div>
-        <div class="tl-role">Business Analyst Intern</div>
-        <ul class="tl-bullets">
-          <li>Managed the Corporate Dilation project, resolving issues for 170+ clients on IM stock software.</li>
-          <li>Analyzed and optimized data from 300 company clients using R and regression analysis.</li>
-          <li>Assisted in redesigning the company website based on structured client feedback.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card">
-        <div class="tl-top">
-          <div><div class="tl-company">Paytm</div><div class="tl-loc">Noida, India</div></div>
-          <div class="tl-date">Jan – Mar 2021</div>
-        </div>
-        <div class="tl-role">Risk Analyst Intern</div>
-        <ul class="tl-bullets">
-          <li>Worked on Risk in Offline Payment Industry — ensuring merchant safety from fraudulent payments.</li>
-          <li>Enhanced security of electronic card payments using secure code technology.</li>
-          <li>Maintained a database of reported stolen/missing cards via a combined warning bulletin.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tl-item gsap-hidden">
-      <div class="tl-card">
-        <div class="tl-top">
-          <div><div class="tl-company">Geop Systems</div><div class="tl-loc">Gurugram, India</div></div>
-          <div class="tl-date">Oct–Dec 2020 & Jul–Oct 2021</div>
-        </div>
-        <div class="tl-role">Data Analytics Intern · Business Analytics Intern</div>
-        <ul class="tl-bullets">
-          <li>Analyzed data from 250 clients using cohort analysis, regression, and predictive/prescriptive techniques.</li>
-          <li>Led Collaboration with Companies project — profitability and cost analysis of 200+ companies using Pandas.</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -766,7 +726,7 @@
   // GSAP animations
   window.addEventListener('load', () => {
     if (typeof gsap === 'undefined') {
-      document.querySelectorAll('.gsap-hidden, .hero-badge, h1, .typewriter-wrap, .hero-bio, .hero-btns, .hero-socials, .photo-ring').forEach(el => {
+      document.querySelectorAll('.gsap-hidden, .hero-badge, h1, .typewriter-wrap, .hero-bio, .hero-btns, .hero-socials, .photo-ring, .tl-line-fill').forEach(el => {
         el.style.opacity = 1;
         el.style.transform = 'none';
       });
@@ -803,6 +763,11 @@
           toggleActions: 'play none none none',
         },
       });
+    });
+
+    gsap.utils.toArray('.tl-line-fill').forEach((line) => {
+      gsap.to(line, { scaleY: 1, duration: 1.0, ease: 'power2.out', transformOrigin: 'top',
+        scrollTrigger: { trigger: line, start: 'top 85%', toggleActions: 'play none none none' } });
     });
   });
 </script>
