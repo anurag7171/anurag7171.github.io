@@ -109,8 +109,8 @@
     }
     .photo-ring img {
       width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
-      object-position: center 12%; display: block; background: #111;
-      transform: scale(1.28); transform-origin: center 18%;
+      object-position: center 40%; display: block; background: #111;
+      transform: scale(1.8); transform-origin: 48% 43%;
     }
     .photo-ring::after {
       content: ''; position: absolute; inset: -14px; border-radius: 50%;
@@ -137,17 +137,27 @@
     /* badges sit ~25px outside the ring edge ~60px from container edge on their side   */
     .fb1 { top: 42px;    left: 145px; animation-delay: 0s;   }   /* top centre     */
     .fb2 { top: 95px;    right: 32px; animation-delay: 0.6s; }   /* upper right    */
-    .fb3 { bottom: 95px; right: 22px; animation-delay: 1.1s; }   /* lower right    */
-    .fb4 { bottom: 42px; left: 165px; animation-delay: 1.6s; }   /* bottom centre  */
+    .fb3 { bottom: 95px; right: 46px; animation-delay: 1.1s; }   /* lower right    */
+    .fb4 { bottom: 24px; left: 165px; animation-delay: 1.6s; }   /* bottom centre  */
     .fb5 { bottom: 95px; left: 18px;  animation-delay: 0.9s; }   /* lower left     */
     .fb6 { top: 95px;    left: 28px;  animation-delay: 0.3s; }   /* upper left     */
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .about-grid { display: block; max-width: 900px; margin: 36px auto 0; }
+    .about-text { max-width: 720px; margin: 0 auto 34px; text-align: center; }
     .about-text p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { color: var(--text); font-weight: 600; }
-    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .about-intro { color: var(--muted); max-width: 640px; margin: 12px auto 0; font-size: 15px; line-height: 1.7; }
+    .about-2col { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; max-width: 1000px; margin: 48px auto 0; align-items: start; }
+    .about-col-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 18px; }
+    .about-journey p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 15px; }
+    .about-journey p:last-child { margin-bottom: 0; }
+    .about-journey strong { color: var(--text); font-weight: 600; }
+    .skill-cat { margin-bottom: 20px; }
+    .skill-cat:last-child { margin-bottom: 0; }
+    .skill-cat-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted-2); margin-bottom: 10px; }
+    .about-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .about-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
       padding: 20px 18px; transition: all 0.2s;
@@ -290,6 +300,7 @@
       .fb5 { bottom: 60px; left: 8px; }
       .fb6 { top: 60px;    left: 12px; }
       .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-2col { grid-template-columns: 1fr; gap: 32px; max-width: 560px; }
       .about-cards { grid-template-columns: 1fr 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
@@ -375,91 +386,39 @@
     </div>
   </section>
 
-  <!-- STATS BAR -->
-  <div class="section" style="padding-bottom:100px;">
-    <div class="stats-bar gsap-hidden">
-      <div class="sbar-item"><div class="sbar-num">4</div><div class="sbar-lbl">Live projects</div></div>
-      <div class="sbar-item"><div class="sbar-num">6</div><div class="sbar-lbl">Roles held</div></div>
-      <div class="sbar-item"><div class="sbar-num">MSc</div><div class="sbar-lbl">Data Science</div></div>
-      <div class="sbar-item"><div class="sbar-num">93.8%</div><div class="sbar-lbl">ML accuracy</div></div>
-    </div>
-  </div>
 </div>
 
 <!-- ABOUT -->
 <section class="section" id="about">
-  <div class="gsap-hidden">
+  <div class="gsap-hidden" style="text-align:center">
     <div class="section-tag">About</div>
-    <h2>A bit about me</h2>
+    <h2>About Me</h2>
+    <p class="about-intro">A data and machine-learning practitioner based in Melbourne, focused on turning messy, real-world data into reliable insight and systems that actually ship.</p>
   </div>
-  <div class="about-grid">
-    <div class="about-text gsap-hidden">
-      <p>
-        I'm a <strong>Data Scientist</strong> based in Melbourne, Australia, with a Master's in Data Science from
-        <strong>Monash University, Melbourne</strong>. My work sits at the intersection of machine learning,
-        analytics, and real-world impact — I care about building things that actually work in production,
-        not just notebooks.
-      </p>
-      <p>
-        I've worked across <strong>fintech (Paytm)</strong>, <strong>financial analytics (IM Stocks, Geop Systems)</strong>,
-        and <strong>business intelligence</strong>, giving me a full-stack view of how data flows from raw
-        collection all the way to executive dashboards.
-      </p>
-      <p>
-        Outside of work I'm passionate about <strong>NLP and transformer models</strong> — my FitReview
-        project fine-tunes RoBERTa on real fitness app reviews and hits <strong>93.8% accuracy</strong>.
-        I'm currently looking for roles in ML engineering, data science, or analytics globally.
-      </p>
+  <div class="about-2col">
+    <div class="about-journey gsap-hidden">
+      <h3 class="about-col-title">My Journey</h3>
+      <p>My path into data wasn't the obvious one. I studied <strong>Economics</strong> first and came to programming later, teaching myself the fundamentals from the ground up during my <strong>Master of Data Science at Monash</strong>. That gap turned out to be an advantage &mdash; it made me obsessive about genuinely understanding how things work, not just running the code.</p>
+      <p>Since then I've built <strong>end-to-end data and ML projects</strong> &mdash; from scraping and modelling data in SQL, through statistical analysis and forecasting, to interactive dashboards and deployed machine-learning models. I've also worked across fintech and financial analytics, which gave me a full view of how data flows from raw collection to real decisions.</p>
+      <p>Today I work as a <strong>Business Intelligence Analyst</strong>, and I'm focused on data and analytics roles here in Australia &mdash; building things that are accurate, reliable and genuinely useful.</p>
     </div>
-    <div class="about-cards">
-      <div class="about-card gsap-hidden">
-        <div class="about-card-icon"></div>
-        <div class="about-card-title">Based in Melbourne</div>
-        <div class="about-card-desc">Working remotely for an India-based company</div>
+    <div class="about-skills gsap-hidden">
+      <h3 class="about-col-title">Technical Skills</h3>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Languages &amp; Query</div>
+        <div class="skill-chips"><span class="skill-chip hot">Python</span><span class="skill-chip hot">SQL</span><span class="skill-chip">R</span></div>
       </div>
-      <div class="about-card gsap-hidden">
-        <div class="about-card-icon"></div>
-        <div class="about-card-title">MSc Data Science</div>
-        <div class="about-card-desc">Monash University, Melbourne</div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Machine Learning</div>
+        <div class="skill-chips"><span class="skill-chip hot">PyTorch</span><span class="skill-chip hot">scikit-learn</span><span class="skill-chip">XGBoost</span><span class="skill-chip">Hugging Face</span><span class="skill-chip">RoBERTa / BERT</span><span class="skill-chip">NLP</span></div>
       </div>
-      <div class="about-card gsap-hidden">
-        <div class="about-card-icon"></div>
-        <div class="about-card-title">ML Focus</div>
-        <div class="about-card-desc">NLP, transformers, fine-tuning</div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">BI &amp; Visualisation</div>
+        <div class="skill-chips"><span class="skill-chip hot">Power BI</span><span class="skill-chip hot">Tableau</span><span class="skill-chip hot">Excel</span><span class="skill-chip">Plotly</span><span class="skill-chip">Streamlit</span></div>
       </div>
-      <div class="about-card gsap-hidden">
-        <div class="about-card-icon"></div>
-        <div class="about-card-title">Full Work Rights</div>
-        <div class="about-card-desc">Bridging Visa A · PR pathway</div>
-      </div>
-    </div>
-  </div>
-  <div class="about-skills-wrap gsap-hidden">
-    <div class="about-skills-title">Skills & Tools</div>
-    <div class="skills-grid">
-      <div class="skill-group gsap-hidden">
-        <div class="skill-group-title">ML & AI</div>
-        <div class="skill-chips">
-          <span class="skill-chip hot">PyTorch</span><span class="skill-chip hot">HuggingFace</span><span class="skill-chip hot">RoBERTa / BERT</span><span class="skill-chip">scikit-learn</span><span class="skill-chip">MLflow</span><span class="skill-chip">NLP</span>
-        </div>
-      </div>
-      <div class="skill-group gsap-hidden">
-        <div class="skill-group-title">Languages</div>
-        <div class="skill-chips">
-          <span class="skill-chip hot">Python</span><span class="skill-chip hot">R</span><span class="skill-chip hot">SQL</span><span class="skill-chip">HTML / CSS</span>
-        </div>
-      </div>
-      <div class="skill-group gsap-hidden">
-        <div class="skill-group-title">Data & Analytics</div>
-        <div class="skill-chips">
-          <span class="skill-chip hot">Pandas</span><span class="skill-chip hot">Tableau</span><span class="skill-chip">NumPy</span><span class="skill-chip">ggplot2</span><span class="skill-chip">Shiny</span><span class="skill-chip">Cohort Analysis</span>
-        </div>
-      </div>
-      <div class="skill-group gsap-hidden">
-        <div class="skill-group-title">Engineering</div>
-        <div class="skill-chips">
-          <span class="skill-chip hot">FastAPI</span><span class="skill-chip hot">Git / GitHub</span><span class="skill-chip">REST APIs</span><span class="skill-chip">Agile</span><span class="skill-chip">Linux</span>
-        </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Data &amp; MLOps</div>
+        <div class="skill-chips"><span class="skill-chip">pandas</span><span class="skill-chip">MLflow</span><span class="skill-chip">FastAPI</span><span class="skill-chip">Docker</span><span class="skill-chip">Git / GitHub</span><span class="skill-chip">CI/CD</span></div>
       </div>
     </div>
   </div>
