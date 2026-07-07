@@ -229,10 +229,11 @@
     .badge-current { font-size: 10px; font-weight: 600; background: rgba(16,185,129,0.12); color: var(--emerald); padding: 2px 8px; border-radius: 4px; vertical-align: middle; margin-left: 8px; }
 
     /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    #projects { max-width: 1060px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
     .proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
     .proj-card:hover { border-color: var(--border-h); transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
-    .proj-img { width: 100%; height: 190px; object-fit: cover; object-position: top center; display: block; border-bottom: 1px solid var(--border); background: #0a0f1a; }
+    .proj-img { width: 100%; aspect-ratio: 1200 / 760; object-fit: cover; object-position: top center; display: block; border-bottom: 1px solid var(--border); background: #0a0f1a; }
     .proj-body { padding: 24px 26px 26px; }
     .proj-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
     .proj-title { font-size: 17px; font-weight: 700; }
@@ -348,6 +349,7 @@
       .timeline { grid-template-columns: 1fr; }
       .exp-cols { grid-template-columns: 1fr; gap: 10px; }
       .lwt-grid { grid-template-columns: 1fr; gap: 32px; }
+      .projects-grid { grid-template-columns: 1fr; }
       .cform-row { grid-template-columns: 1fr; }
       .exp-col { margin-bottom: 16px; }
       .about-cards { grid-template-columns: 1fr 1fr; }
